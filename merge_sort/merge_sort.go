@@ -1,7 +1,5 @@
 package sortAlgos
 
-import "fmt"
-
 func MergeSort(numbers []int) {
 	if len(numbers) <= 1 {
 		return
@@ -15,8 +13,6 @@ func MergeSort(numbers []int) {
 	rightSlice := make([]int, len(numbers)-middleIndex)
 	copy(rightSlice, numbers[middleIndex:])
 
-	fmt.Println("left", leftSlice, "right", rightSlice)
-
 	MergeSort(leftSlice)
 	MergeSort(rightSlice)
 
@@ -25,8 +21,6 @@ func MergeSort(numbers []int) {
 
 func merge(leftSlice, rightSlice, slice []int) {
 	i, l, r := 0, 0, 0
-
-	fmt.Println(slice, leftSlice, rightSlice)
 
 	for l < len(leftSlice) && r < len(rightSlice) {
 		if leftSlice[l] < rightSlice[r] {
@@ -49,5 +43,5 @@ func merge(leftSlice, rightSlice, slice []int) {
 		r++
 		i++
 	}
-	fmt.Println(slice)
+
 }
