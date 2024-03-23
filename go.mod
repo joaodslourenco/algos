@@ -1,3 +1,3 @@
-module merge-sort
+module algos
 
 go 1.22.0
